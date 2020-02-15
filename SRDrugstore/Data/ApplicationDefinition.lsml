@@ -3991,6 +3991,17 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem DataType=":Int32?"
+                           Kind="Value"
+                           Name="Stock">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression Member="Producto/Properties[Stock]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
               <ContentItem DataType=":Decimal"
                            Kind="Value"
                            Name="PrecioCompra">
@@ -4179,6 +4190,17 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <MemberExpression Member="Producto/Properties[Descripcion]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem DataType=":Int32?"
+                           Kind="Value"
+                           Name="Stock">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression Member="Producto/Properties[Stock]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
@@ -5052,6 +5074,17 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem DataType=":Int32?"
+                           Kind="Value"
+                           Name="Stock">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression Member="Producto/Properties[Stock]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem>
           </ContentItem>
         </ContentItem>
@@ -5178,6 +5211,26 @@
             </ContentItem.PropertySources>
             <ContentItem Kind="Group"
                          Name="left">
+              <ContentItem DataType="Empleado"
+                           Kind="Details"
+                           Name="Empleado">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression Member="VentaSet/Properties[Empleado]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem DataType="Empleado"
+                             Kind="Details"
+                             Name="RowTemplate1">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
               <ContentItem DataType="Cliente"
                            Kind="Details"
                            Name="ClienteSetItem">
@@ -5211,28 +5264,7 @@
               </ContentItem>
             </ContentItem>
             <ContentItem Kind="Group"
-                         Name="right">
-              <ContentItem DataType="Empleado"
-                           Kind="Details"
-                           Name="Empleado">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression Member="VentaSet/Properties[Empleado]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem DataType="Empleado"
-                             Kind="Details"
-                             Name="RowTemplate1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
+                         Name="right"></ContentItem>
           </ContentItem>
           <ContentItem Kind="Group"
                        Name="children">
@@ -5499,6 +5531,17 @@
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <MemberExpression Member="Producto/Properties[PrecioCompra]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+            </ContentItem>
+            <ContentItem DataType=":Int32?"
+                         Kind="Value"
+                         Name="Stock">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression Member="Producto/Properties[Stock]" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>

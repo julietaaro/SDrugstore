@@ -5178,6 +5178,26 @@
             </ContentItem.PropertySources>
             <ContentItem Kind="Group"
                          Name="left">
+              <ContentItem DataType="Empleado"
+                           Kind="Details"
+                           Name="Empleado">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression Member="VentaSet/Properties[Empleado]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem DataType="Empleado"
+                             Kind="Details"
+                             Name="RowTemplate1">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
               <ContentItem DataType="Cliente"
                            Kind="Details"
                            Name="ClienteSetItem">
@@ -5211,28 +5231,7 @@
               </ContentItem>
             </ContentItem>
             <ContentItem Kind="Group"
-                         Name="right">
-              <ContentItem DataType="Empleado"
-                           Kind="Details"
-                           Name="Empleado">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression Member="VentaSet/Properties[Empleado]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem DataType="Empleado"
-                             Kind="Details"
-                             Name="RowTemplate1">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
+                         Name="right"></ContentItem>
           </ContentItem>
           <ContentItem Kind="Group"
                        Name="children">
