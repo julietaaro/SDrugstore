@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DObjectContext" StorageEntityContainer="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore">
+    <EntitySetMapping Name="CargoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.Cargo)">
+        <MappingFragment StoreEntitySet="CargoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NombreCargo" ColumnName="NombreCargo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClienteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.Cliente)">
+        <MappingFragment StoreEntitySet="ClienteSet">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CUIL" ColumnName="CUIL" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompraSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.Compra)">
+        <MappingFragment StoreEntitySet="CompraSet">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Compra_Proveedor" ColumnName="Compra_Proveedor" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCompraSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.DetalleCompra)">
+        <MappingFragment StoreEntitySet="DetalleCompraSet">
+          <ScalarProperty Name="DetalleCompra_Producto" ColumnName="DetalleCompra_Producto" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="Compra_DetalleCompra" ColumnName="Compra_DetalleCompra" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVentaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.DetalleVenta)">
+        <MappingFragment StoreEntitySet="DetalleVentaSet">
+          <ScalarProperty Name="DetalleVenta_Producto" ColumnName="DetalleVenta_Producto" />
+          <ScalarProperty Name="PrecioUnitario" ColumnName="PrecioUnitario" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Venta_DetalleVenta" ColumnName="Venta_DetalleVenta" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpleadoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.Empleado)">
+        <MappingFragment StoreEntitySet="EmpleadoSet">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CUIL" ColumnName="CUIL" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Empleado_Cargo" ColumnName="Empleado_Cargo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.Producto)">
+        <MappingFragment StoreEntitySet="ProductoSet">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PrecioCompra" ColumnName="PrecioCompra" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProveedorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.Proveedor)">
+        <MappingFragment StoreEntitySet="ProveedorSet">
+          <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_D.VentaSet)">
+        <MappingFragment StoreEntitySet="VentaSet">
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Venta_Empleado" ColumnName="Venta_Empleado" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Venta_Cliente" ColumnName="Venta_Cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

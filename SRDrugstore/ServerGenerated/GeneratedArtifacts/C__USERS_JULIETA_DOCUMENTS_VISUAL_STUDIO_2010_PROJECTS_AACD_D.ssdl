@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore">
+    <EntitySet Name="CargoSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Cargo" store:Type="Tables" Schema="dbo" Table="CargoSet" />
+    <EntitySet Name="ClienteSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Cliente" store:Type="Tables" Schema="dbo" Table="ClienteSet" />
+    <EntitySet Name="CompraSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Compra" store:Type="Tables" Schema="dbo" Table="CompraSet" />
+    <EntitySet Name="DetalleCompraSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.DetalleCompra" store:Type="Tables" Schema="dbo" Table="DetalleCompraSet" />
+    <EntitySet Name="DetalleVentaSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.DetalleVenta" store:Type="Tables" Schema="dbo" Table="DetalleVentaSet" />
+    <EntitySet Name="EmpleadoSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Empleado" store:Type="Tables" Schema="dbo" Table="EmpleadoSet" />
+    <EntitySet Name="ProductoSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Producto" store:Type="Tables" Schema="dbo" Table="ProductoSet" />
+    <EntitySet Name="ProveedorSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Proveedor" store:Type="Tables" Schema="dbo" Table="ProveedorSet" />
+    <EntitySet Name="VentaSet" EntityType="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.VentaSet" store:Type="Tables" Schema="dbo" Table="VentaSet" />
+    <AssociationSet Name="Compra_DetalleCompra" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Compra_DetalleCompra">
+      <End Role="Compra" EntitySet="CompraSet" />
+      <End Role="DetalleCompra" EntitySet="DetalleCompraSet" />
+    </AssociationSet>
+    <AssociationSet Name="Proveedor_Compra" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Proveedor_Compra">
+      <End Role="Proveedor" EntitySet="ProveedorSet" />
+      <End Role="Compra" EntitySet="CompraSet" />
+    </AssociationSet>
+    <AssociationSet Name="Producto_DetalleCompra" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Producto_DetalleCompra">
+      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="DetalleCompra" EntitySet="DetalleCompraSet" />
+    </AssociationSet>
+    <AssociationSet Name="Producto_DetalleVenta" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Producto_DetalleVenta">
+      <End Role="Producto" EntitySet="ProductoSet" />
+      <End Role="DetalleVenta" EntitySet="DetalleVentaSet" />
+    </AssociationSet>
+    <AssociationSet Name="Cargo_Empleado" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Cargo_Empleado">
+      <End Role="Cargo" EntitySet="CargoSet" />
+      <End Role="Empleado" EntitySet="EmpleadoSet" />
+    </AssociationSet>
+    <AssociationSet Name="VentaSet_DetalleVenta" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.VentaSet_DetalleVenta">
+      <End Role="VentaSet" EntitySet="VentaSet" />
+      <End Role="DetalleVenta" EntitySet="DetalleVentaSet" />
+    </AssociationSet>
+    <AssociationSet Name="Empleado_VentaSet" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Empleado_VentaSet">
+      <End Role="Empleado" EntitySet="EmpleadoSet" />
+      <End Role="VentaSet" EntitySet="VentaSet" />
+    </AssociationSet>
+    <AssociationSet Name="Venta_Cliente" Association="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Venta_Cliente">
+      <End Role="ClienteSet" EntitySet="ClienteSet" />
+      <End Role="VentaSet" EntitySet="VentaSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCargo" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Sueldo" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DNI" Type="bigint" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CUIL" Type="bigint" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Compra_Proveedor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleCompra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="decimal" Scale="2" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Compra_DetalleCompra" Type="int" Nullable="false" />
+    <Property Name="DetalleCompra_Producto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="PrecioUnitario" Type="decimal" Scale="2" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DetalleVenta_Producto" Type="int" Nullable="false" />
+    <Property Name="Venta_DetalleVenta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="DNI" Type="bigint" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="CUIL" Type="bigint" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado_Cargo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="PrecioCompra" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Stock" Type="int" />
+  </EntityType>
+  <EntityType Name="Proveedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="CUIT" Type="bigint" Nullable="false" />
+    <Property Name="RazonSocial" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="VentaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Venta_Empleado" Type="int" Nullable="false" />
+    <Property Name="Venta_Cliente" Type="int" />
+  </EntityType>
+  <Association Name="Compra_DetalleCompra">
+    <End Role="Compra" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Compra" Multiplicity="1" />
+    <End Role="DetalleCompra" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.DetalleCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleCompra">
+        <PropertyRef Name="Compra_DetalleCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Proveedor_Compra">
+    <End Role="Proveedor" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Proveedor" Multiplicity="1" />
+    <End Role="Compra" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="Compra_Proveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Producto_DetalleCompra">
+    <End Role="Producto" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Producto" Multiplicity="1" />
+    <End Role="DetalleCompra" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.DetalleCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleCompra">
+        <PropertyRef Name="DetalleCompra_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Producto_DetalleVenta">
+    <End Role="Producto" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Producto" Multiplicity="1" />
+    <End Role="DetalleVenta" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="DetalleVenta_Producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cargo_Empleado">
+    <End Role="Cargo" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Cargo" Multiplicity="1" />
+    <End Role="Empleado" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="Empleado_Cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VentaSet_DetalleVenta">
+    <End Role="VentaSet" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.VentaSet" Multiplicity="1" />
+    <End Role="DetalleVenta" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VentaSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="Venta_DetalleVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Empleado_VentaSet">
+    <End Role="Empleado" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Empleado" Multiplicity="1" />
+    <End Role="VentaSet" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.VentaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VentaSet">
+        <PropertyRef Name="Venta_Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Venta_Cliente">
+    <End Role="ClienteSet" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.Cliente" Multiplicity="0..1" />
+    <End Role="VentaSet" Type="C__USERS_JULIETA_DOCUMENTS_VISUAL_STUDIO_2010_PROJECTS_AACD_DStore.VentaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClienteSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VentaSet">
+        <PropertyRef Name="Venta_Cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

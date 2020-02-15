@@ -1,0 +1,12 @@
+<OutOfBrowserSettings ShortName="SRDrugstore" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
+  <OutOfBrowserSettings.Blurb>SRDrugstore</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="SRDrugstore" Top="0" Left="0" WindowStartupLocation="Manual" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="32,32">Resources/icon1.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>
